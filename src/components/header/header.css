@@ -1,0 +1,34 @@
+.header {
+    display: flex;
+    align-items: center;
+    background-color: black;
+    color: white;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .nav {
+    margin-left: auto; /* Pushes the navigation links to the right */
+  }
+  
+  .nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .nav li {
+    margin-right: 20px;
+  }
+  
+  .nav a {
+    text-decoration: none;
+    color: white;
+  }
+  
+  .capital-m {
+    font-size: 25px;
+  }
+  

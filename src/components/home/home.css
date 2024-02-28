@@ -1,0 +1,54 @@
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center content horizontally */
+    height: calc(100vh - 80px); /* Adjust height to leave space for the header */
+    position: relative; /* Add relative positioning */
+    margin-top: 5px; /* Adjust margin-top to bring it closer to the header */
+  }
+  
+  .image-container {
+    width: 50%; /* Adjust width as needed */
+    max-width: 800px; /* Set max width for responsiveness */
+    height: 60vh; /* Adjust height as needed */
+    background-image: url('../home/background.jpg'); /* Path to your image */
+    background-size: cover;
+    background-position:center;
+    position: relative; /* Add relative positioning */
+  }
+  
+  img {
+    width: 100%;
+    height: 80vh;
+  }
+  
+  .creative,
+  .admin {
+    position: absolute;
+    font-weight: bold; /* Adjust font weight */
+    font-size: 24px; /* Adjust font size */
+  }
+  
+  .creative {
+    top: 50%; /* Position at 50% from the top */
+    left: 10px; /* Adjust position from the left */
+    transform: translateY(-50%); /* Adjust vertically to center */
+    color: black; /* Set color to black */
+  }
+  
+  .admin {
+    top: 50%; /* Position at 50% from the top */
+    right: 10px; /* Adjust position from the right */
+    transform: translateY(-50%); /* Adjust vertically to center */
+    color: gray; /* Set color to gray */
+  }
+  
+  /* Styles for different cursor positions */
+  .home.left .creative {
+    opacity: 1;
+  }
+  
+  .home.right .admin {
+    opacity: 1;
+  }
+  
