@@ -1,28 +1,49 @@
-import React, { useState } from 'react';
-import './home.css';
-import backgroundImage from './background.jpg'; // Import the image
+import React from 'react';
+import { motion, useTransform, useViewportScroll } from 'framer-motion';
+import './home.css'; // Import the CSS file
 
 const Home = () => {
-  const [isLeft, setIsLeft] = useState(false); // State to track cursor position
-
-  const handleMouseMove = (e) => {
-    const x = e.clientX;
-    const screenWidth = window.innerWidth;
-    const threshold = 0.5; // Adjust this value as needed
-
-    setIsLeft(x < screenWidth * threshold); // Update state based on cursor position
-  };
+  const { scrollYProgress } = useViewportScroll();
+  const yRange = useTransform(scrollYProgress, [0, 1], [0, -500]); // Adjust the range as needed
 
   return (
-    <div className={`home ${isLeft ? 'left' : 'right'}`} onMouseMove={handleMouseMove}>
-      <div className="creative">Creative</div>
-      <div className="image-container">
-        {/* Use the imported image directly */}
-        <img src={backgroundImage} alt="Main Image" />
-      </div>
-      <div className="admin">Admin</div>
+    <div className="home">
+      {/* Background image with parallax effect */}
+      <motion.div
+        className="background"
+        style={{
+          backgroundImage: 'url("../../assets/Mudas.png")', // Adjust the image path
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          y: yRange, // Apply the parallax effect
+        }}
+      />
+
+      {/* Text elements */}
+      <motion.div className="creative" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
+        Creative
+      </motion.div>
+      <motion.div className="admin" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
+        Admin
+      </motion.div>
     </div>
   );
 };
 
 export default Home;
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+ 
